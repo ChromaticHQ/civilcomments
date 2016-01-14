@@ -63,7 +63,7 @@ class CivilCommentsSettingsForm extends ConfigFormBase {
 
     $form = parent::buildForm($form, $form_state);
     return $form;
-}
+  }
 
   /**
    * {@inheritdoc}
