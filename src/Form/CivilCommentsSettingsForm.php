@@ -69,7 +69,7 @@ class CivilCommentsSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    \Drupal::configFactory()->getEditable('civilcomments.settings')
+    $this->config('civilcomments.settings')
       ->set('civilcomments_site_id', $form_state->getValue('civilcomments_site_id'))
       ->set('civilcomments_content_id', $form_state->getValue('civilcomments_content_id'))
       ->set('civilcomments_lang', $form_state->getValue('civilcomments_lang'))
