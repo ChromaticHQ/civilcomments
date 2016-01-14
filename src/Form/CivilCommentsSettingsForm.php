@@ -43,19 +43,19 @@ class CivilCommentsSettingsForm extends ConfigFormBase {
       '#open' => TRUE,
     ];
 
-    $form['account']['site_id'] = [
+    $form['account']['civilcomments_site_id'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Site ID'),
       '#default_value' => \Drupal::config('civilcomments.settings')->get('civilcomments_site_id'),
     ];
 
-    $form['account']['content_id'] = [
+    $form['account']['civilcomments_content_id'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Content ID'),
       '#default_value' => \Drupal::config('civilcomments.settings')->get('civilcomments_content_id'),
     ];
 
-    $form['account']['lang'] = [
+    $form['account']['civilcomments_lang'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Site Language'),
       '#default_value' => \Drupal::config('civilcomments.settings')->get('civilcomments_lang'),
@@ -63,7 +63,7 @@ class CivilCommentsSettingsForm extends ConfigFormBase {
 
     $form = parent::buildForm($form, $form_state);
     return $form;
-}
+  }
 
   /**
    * {@inheritdoc}
