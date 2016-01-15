@@ -21,6 +21,11 @@ use Drupal\Core\Form\FormStateInterface;
  *     "civil_comments"
  *   }
  * )
+ *
+ * @todo
+ *   - Implement validation.
+ *   - Consider implementing an interface as e.g. Comments does with the options
+ *     array.
  */
 class CivilCommentsDefaultWidget extends WidgetBase {
 
