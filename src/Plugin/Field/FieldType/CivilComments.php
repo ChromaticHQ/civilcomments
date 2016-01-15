@@ -60,6 +60,9 @@ class CivilComments extends FieldItemBase {
 
   /**
    * {@inheritdoc}
+   *
+   * @todo
+   *   - Implement some field settings, or get rid of this.
    */
   public function fieldSettingsForm(array $form, FormStateInterface $form_state) {
     $element = [];
@@ -80,12 +83,13 @@ class CivilComments extends FieldItemBase {
   }
 
   /**
-   * {@inheritdoc}
+   * Defines conditions where field can be considered empty.
+   *
+   * @return (bool)
+   *   Returns TRUE if 'status' is unset (NULL) or set to 0 ("Disabled").
    */
   public function isEmpty() {
-    // The field is never empty since a) it's required, and b) there will be one
-    // of three possible values at all time: 0, 1, or 2.
-    return FALSE;
+    return !((bool) $this->get('status')->getValue());
   }
 
 }
