@@ -37,9 +37,9 @@ class CivilCommentsDefaultWidget extends WidgetBase {
       '#title' => $this->t('Comment status'),
       '#type' => 'select',
       '#options' => [
-        '0' => t('Disabled'),
-        '1' => t('Closed'),
-        '2' => t('Open'),
+        '0' => $this->t('Disabled'),
+        '1' => $this->t('Closed'),
+        '2' => $this->t('Open'),
       ],
       '#default_value' => isset($items[$delta]->status) ? $items[$delta]->status : NULL,
     ];
