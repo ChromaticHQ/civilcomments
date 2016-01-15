@@ -26,14 +26,26 @@ class CivilCommentsDefaultFormatter extends FormatterBase {
 
   /**
    * {@inheritdoc}
+   *
+   * Currently returning #status, but not actually using it. Reserved for use
+   * in closing comments to new submissions, while still displaying them on the
+   * entity.
+   *
+   * @todo
+   *   - Return other items defined required for civilcomments script:
+   *     - content_id
+   *     - lang
+   *     - site_id
+   *   - Find out how civilcomments expects to do this, and use #status to do
+   *     it.
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      $comments = [
-        '#theme' => 'civilcomments_default',
-        '#status' => (bool) $item->status,
+      $elements[$delta] = [
+        '#theme' => 'civilcomments_formatter',
+        '#status' => $item->status,
       ];
     }
 
