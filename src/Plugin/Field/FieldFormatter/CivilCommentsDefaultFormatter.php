@@ -32,10 +32,6 @@ class CivilCommentsDefaultFormatter extends FormatterBase {
    * entity.
    *
    * @todo
-   *   - Return other items defined required for civilcomments script:
-   *     - content_id
-   *     - lang
-   *     - site_id
    *   - Find out how civilcomments expects to do this, and use #status to do
    *     it.
    */
@@ -45,6 +41,9 @@ class CivilCommentsDefaultFormatter extends FormatterBase {
     foreach ($items as $delta => $item) {
       $elements[$delta] = [
         '#theme' => 'civilcomments_formatter',
+        '#content_id' => \Drupal::config('civilcomments.settings')->get('civilcomments_content_id'),
+        '#lang' => \Drupal::config('civilcomments.settings')->get('civilcomments_lang'),
+        '#site_id' => \Drupal::config('civilcomments.settings')->get('civilcomments_site_id'),
         '#status' => $item->status,
       ];
     }
