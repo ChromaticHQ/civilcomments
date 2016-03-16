@@ -33,13 +33,12 @@ class CivilCommentsSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, \Drupal\Core\Form\FormStateInterface $form_state) {
-
+  public function buildForm(array $form, FormStateInterface $form_state) {
     // Add form elements to collect site account information.
     $form['account'] = [
       '#type' => 'details',
       '#title' => $this->t('Default account settings'),
-      '#description' => $this->t('You will need an active subscription to Civil Comments, and the Site ID associated with your subscription.'),
+      '#description' => $this->t('You will need an active subscription to <a href=":url">Civil Comments</a>, and the Site ID associated with your subscription.', [':url' => 'https://www.civilcomments.com/']),
       '#open' => TRUE,
     ];
 
@@ -58,6 +57,7 @@ class CivilCommentsSettingsForm extends ConfigFormBase {
     $form['account']['civilcomments_lang'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Site Language'),
+      '#description' => $this->t('A two digit language code.'),
       '#default_value' => \Drupal::config('civilcomments.settings')->get('civilcomments_lang'),
     ];
 

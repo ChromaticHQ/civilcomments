@@ -27,7 +27,7 @@ use Drupal\Core\TypedData\DataDefinition;
  *   default_formatter = "civilcomments_default"
  * )
  */
-class CivilComments extends FieldItemBase {
+class CivilComments extends FieldItemBase implements CivilCommentItemInterface {
 
   /**
    * {@inheritdoc}

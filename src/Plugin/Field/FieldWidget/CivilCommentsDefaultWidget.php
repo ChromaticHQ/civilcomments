@@ -7,6 +7,7 @@
 
 namespace Drupal\civilcomments\Plugin\Field\FieldWidget;
 
+use Drupal\civilcomments\Plugin\Field\FieldType\CivilCommentItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -34,12 +35,15 @@ class CivilCommentsDefaultWidget extends WidgetBase {
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $element['status'] = [
-      '#title' => $this->t('Comment status'),
-      '#type' => 'select',
+      '#title' => $this->t('Civil Comments status'),
+      '#type' => 'radios',
       '#options' => [
-        '0' => $this->t('Disabled'),
-        '1' => $this->t('Closed'),
-        '2' => $this->t('Open'),
+        CivilCommentItemInterface::DISABLED => $this->t('Disabled'),
+        CivilCommentItemInterface::CLOSED => $this->t('Closed'),
+        CivilCommentItemInterface::OPEN => $this->t('Open'),
+      ],
+      CivilCommentItemInterface::OPEN => [
+        '#description' => $this->t('Users with the "Post comments" permission can post comments.'),
       ],
       '#default_value' => isset($items[$delta]->status) ? $items[$delta]->status : NULL,
     ];
