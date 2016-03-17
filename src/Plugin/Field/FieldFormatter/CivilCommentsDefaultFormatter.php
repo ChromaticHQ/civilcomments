@@ -37,6 +37,7 @@ class CivilCommentsDefaultFormatter extends FormatterBase {
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
+    $entity_uuid = $items->getEntity()->uuid();
 
     foreach ($items as $delta => $item) {
       $elements[$delta] = [
@@ -49,7 +50,7 @@ class CivilCommentsDefaultFormatter extends FormatterBase {
           'drupalSettings' => [
             'civilcomments' => [
               'site_id' => \Drupal::config('civilcomments.settings')->get('civilcomments_site_id'),
-              'content_id' => \Drupal::config('civilcomments.settings')->get('civilcomments_content_id'),
+              'content_id' => $entity_uuid,
               'lang' => \Drupal::config('civilcomments.settings')->get('civilcomments_lang'),
             ],
           ],

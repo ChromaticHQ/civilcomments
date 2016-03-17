@@ -48,12 +48,6 @@ class CivilCommentsSettingsForm extends ConfigFormBase {
       '#default_value' => \Drupal::config('civilcomments.settings')->get('civilcomments_site_id'),
     ];
 
-    $form['account']['civilcomments_content_id'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Content ID'),
-      '#default_value' => \Drupal::config('civilcomments.settings')->get('civilcomments_content_id'),
-    ];
-
     $form['account']['civilcomments_lang'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Site Language'),
@@ -71,7 +65,6 @@ class CivilCommentsSettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->config('civilcomments.settings')
       ->set('civilcomments_site_id', $form_state->getValue('civilcomments_site_id'))
-      ->set('civilcomments_content_id', $form_state->getValue('civilcomments_content_id'))
       ->set('civilcomments_lang', $form_state->getValue('civilcomments_lang'))
       ->save();
 

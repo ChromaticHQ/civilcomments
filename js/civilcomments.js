@@ -15,4 +15,4 @@
   };
   c["CivilCommentsObject"] = c[n];
 })(window, document, "script", "https://ssr.civilcomments.com/v1", "Civil");
-Civil(drupalSettings.civilcomments.site_id,drupalSettings.civilcomments.content_id,drupalSettings.civilcomments.lang);
+Civil(drupalSettings.civilcomments.content_id,drupalSettings.civilcomments.site_id,drupalSettings.civilcomments.lang);

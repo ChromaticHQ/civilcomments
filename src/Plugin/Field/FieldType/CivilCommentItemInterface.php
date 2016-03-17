@@ -12,7 +12,7 @@ namespace Drupal\civilcomments\Plugin\Field\FieldType;
  */
 interface CivilCommentItemInterface {
 
-	/**
+  /**
    * Comments for this entity are disabled.
    */
   const DISABLED = 0;
