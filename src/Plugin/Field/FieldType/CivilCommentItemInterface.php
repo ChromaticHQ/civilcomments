@@ -26,4 +26,5 @@ interface CivilCommentItemInterface {
    * Comments for this entity are open.
    */
   const OPEN = 2;
+
 }

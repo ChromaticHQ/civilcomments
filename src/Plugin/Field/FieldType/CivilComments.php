@@ -7,13 +7,9 @@
 
 namespace Drupal\civilcomments\Plugin\Field\FieldType;
 
-use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemBase;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Render\Element;
-use Drupal\Core\Routing\UrlGeneratorTrait;
-use Drupal\Core\Session\AnonymousUserSession;
 use Drupal\Core\TypedData\DataDefinition;
 
 /**

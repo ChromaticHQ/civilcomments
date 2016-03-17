@@ -9,7 +9,6 @@ namespace Drupal\civilcomments\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Url;
 
 /**
  * Civil Comments configuration settings form.
@@ -70,4 +69,5 @@ class CivilCommentsSettingsForm extends ConfigFormBase {
 
     parent::submitForm($form, $form_state);
   }
+
 }
