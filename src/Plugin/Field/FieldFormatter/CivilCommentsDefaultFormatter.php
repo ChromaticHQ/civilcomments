@@ -36,8 +36,12 @@ class CivilCommentsDefaultFormatter extends FormatterBase {
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
-    $entity_uuid = $items->getEntity()->uuid();
+    $user = \Drupal::currentUser();
+    if (!$user->hasPermission('view civilcomments')) {
+      return $elements;
+    }
 
+    $entity_uuid = $items->getEntity()->uuid();
     foreach ($items as $delta => $item) {
       $elements[$delta] = [
         '#theme' => 'civilcomments_formatter',

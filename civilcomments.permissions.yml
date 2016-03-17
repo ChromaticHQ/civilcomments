@@ -2,6 +2,6 @@ administer civilcomments:
   title: 'Administer Civil Comments'
   description: 'Allows users to configure Civil Comments.'
   restrict access: TRUE
-post civilcomments:
-  title: 'Post Civil Comments'
-  description: 'Allows users to post Civil Comments.'
+view civilcomments:
+  title: 'View Civil Comments'
+  description: 'Allows users to view Civil Comments.'
