@@ -37,15 +37,17 @@ class CivilCommentsDefaultWidget extends WidgetBase {
     $element['status'] = [
       '#title' => $this->t('Civil Comments status'),
       '#type' => 'radios',
+      '#default_value' => isset($items[$delta]->status) ? $items[$delta]->status : NULL,
       '#options' => [
-        CivilCommentItemInterface::DISABLED => $this->t('Disabled'),
-        CivilCommentItemInterface::CLOSED => $this->t('Closed'),
         CivilCommentItemInterface::OPEN => $this->t('Open'),
+        CivilCommentItemInterface::DISABLED => $this->t('Disabled'),
       ],
       CivilCommentItemInterface::OPEN => [
-        '#description' => $this->t('Users with the "Post comments" permission can post comments.'),
+        '#description' => $this->t('Users with the "View Civil Comments" permission will be able to view and post comments.'),
       ],
-      '#default_value' => isset($items[$delta]->status) ? $items[$delta]->status : NULL,
+      CivilCommentItemInterface::DISABLED => [
+        '#description' => $this->t('Civil Comments will not be displayed.'),
+      ],
     ];
 
     return $element;
