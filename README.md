@@ -1,4 +1,5 @@
 # Civil Comments
+[![Build Status](https://travis-ci.org/ChromaticHQ/civilcomments.svg?branch=8.x-1.x)](https://travis-ci.org/ChromaticHQ/civilcomments)
 
 [Civil Comments](https://www.civilcomments.com) is a platform that brings real-world social cues to comments sections via crowd-sourced moderation and powerful community management tools. Civil Comments is the first commenting platform _specifically designed_ to improve the way people treat each other online.
 
