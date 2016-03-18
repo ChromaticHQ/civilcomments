@@ -7,7 +7,6 @@
 
 namespace Drupal\civilcomments\Plugin\Field\FieldFormatter;
 
-use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
 
@@ -37,14 +36,28 @@ class CivilCommentsDefaultFormatter extends FormatterBase {
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
+    $user = \Drupal::currentUser();
+    if (!$user->hasPermission('view civilcomments')) {
+      return $elements;
+    }
 
+    $entity_uuid = $items->getEntity()->uuid();
     foreach ($items as $delta => $item) {
       $elements[$delta] = [
         '#theme' => 'civilcomments_formatter',
-        '#content_id' => \Drupal::config('civilcomments.settings')->get('civilcomments_content_id'),
-        '#lang' => \Drupal::config('civilcomments.settings')->get('civilcomments_lang'),
-        '#site_id' => \Drupal::config('civilcomments.settings')->get('civilcomments_site_id'),
         '#status' => $item->status,
+        '#attached' => [
+          'library' => [
+            'civilcomments/civilcomments.default',
+          ],
+          'drupalSettings' => [
+            'civilcomments' => [
+              'site_id' => \Drupal::config('civilcomments.settings')->get('civilcomments_site_id'),
+              'content_id' => $entity_uuid,
+              'lang' => \Drupal::config('civilcomments.settings')->get('civilcomments_lang'),
+            ],
+          ],
+        ],
       ];
     }
 

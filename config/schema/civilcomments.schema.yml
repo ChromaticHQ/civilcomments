@@ -4,7 +4,5 @@ civilcomments.settings:
   mapping:
     civilcomments_site_id:
       type: string
-    civilcomments_content_id:
-      type: string
     civilcomments_lang:
       type: string
