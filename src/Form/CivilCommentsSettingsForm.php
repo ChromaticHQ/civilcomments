@@ -9,6 +9,7 @@ namespace Drupal\civilcomments\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Language\LanguageManager;
 
 /**
  * Civil Comments configuration settings form.
@@ -47,11 +48,19 @@ class CivilCommentsSettingsForm extends ConfigFormBase {
       '#default_value' => \Drupal::config('civilcomments.settings')->get('civilcomments_site_id'),
     ];
 
+    $standard_languages = LanguageManager::getStandardLanguageList();
+    // Build a select list with language names in native language for the user
+    // to choose from. And build a list of available languages for the browser
+    // to select the language default from.
+    // Select lists based on all standard languages.
+    foreach ($standard_languages as $langcode => $language_names) {
+      $select_options[$langcode] = $language_names[1];
+    }
     $form['account']['civilcomments_lang'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Site Language'),
-      '#description' => $this->t('A two digit language code.'),
+      '#type' => 'select',
+      '#title' => $this->t('Content Language'),
       '#default_value' => \Drupal::config('civilcomments.settings')->get('civilcomments_lang'),
+      '#options' => $select_options,
     ];
 
     $form = parent::buildForm($form, $form_state);
