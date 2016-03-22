@@ -7,10 +7,10 @@ _PLEASE NOTE: There is not currently a free version of Civil Comments. For the t
 
 ### Drupal Integration
 * Provides a Civil Comments field type that can be added to any fieldable entity.
-* TKTK
 
-### Installation</h3>
+### Installation
 * Register your site at [civilcomments.com](https://www.civilcomments.com)
 * Download and install the Civil Comments module.
-* Configure your Civil Comments' site id, content id, and language code at `admin/config/system/civilcomments`.
-* TKTK
+* Configure your Civil Comments' site id and language at `admin/config/system/civilcomments`.
+* Assign the appropriate permissions for Civil Comments.
+* Add a Civil Comments field to a content type or other entity.
