@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\civilcomments\Plugin\Field\FieldType\CivilComments.
- */
-
 namespace Drupal\civilcomments\Plugin\Field\FieldType;
 
 use Drupal\Core\Field\FieldItemBase;
@@ -81,7 +76,7 @@ class CivilComments extends FieldItemBase implements CivilCommentItemInterface {
   /**
    * Defines conditions where field can be considered empty.
    *
-   * @return (bool)
+   * @return bool
    *   Returns TRUE if 'status' is unset (NULL) or set to 0 ("Disabled").
    */
   public function isEmpty() {

@@ -22,7 +22,7 @@
  * @todo
  *   Use this if it's needed, get rid of it otherwise.
  */
-function template_preprocess_civilcomments_formatter(&$variables) {
+function template_preprocess_civilcomments_formatter(array &$variables) {
 }
 
 /**

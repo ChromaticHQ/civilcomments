@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\civilcomments\Plugin\field\formatter\CivilCommentsDefaultFormatter.
- */
-
 namespace Drupal\civilcomments\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemListInterface;

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\civilcomments\Plugin\Field\FieldType\CivilCommentItemInterface.
- */
-
 namespace Drupal\civilcomments\Plugin\Field\FieldType;
 
 /**

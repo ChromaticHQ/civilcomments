@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\civilcomments\Form\CivilCommentsSettingsForm.
- */
-
 namespace Drupal\civilcomments\Form;
 
 use Drupal\Core\Form\ConfigFormBase;

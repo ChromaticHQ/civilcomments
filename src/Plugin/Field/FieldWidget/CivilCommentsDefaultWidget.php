@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\civilcomments\Plugin\Field\FieldWidget\CivilCommentsDefaultWidget.
- */
-
 namespace Drupal\civilcomments\Plugin\Field\FieldWidget;
 
 use Drupal\civilcomments\Plugin\Field\FieldType\CivilCommentItemInterface;
